@@ -1,0 +1,52 @@
+
+
+/* class selector */
+.fakeButton {
+    color: red;
+}
+
+/* generic descendent selector */
+.container2  .fakeButton {
+    color: green;
+}
+
+/* direct-child selector */
+.container > .fakeButton {
+    color: aqua;
+}
+
+/* "and" selector approach.  Selects elements that match multiple selectors */
+span#bla.fakeButton {
+    background-color: yellow;
+}
+
+/* "or" selector approach.  Selects elements that match one or the other selectors */
+.container, .container2 {
+    margin-top: 24px;
+}
+
+
+/* Sibling selector (I think this style of sibling selector only selects the one after the "+") */
+.testButton + .fakeButton {
+    color: blue;
+}
+
+/* "hover" pseudo class selector */
+.fakeButton:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+
+/* Multiple classes, plus selecting the "before" psuedo element */
+/* The "before" psuedo element can't be added in HTML (to my knowledge).  It gets 
+    created when a selector like this targets it.  */
+.fakeButton.calvin::before {
+    content: "hello";
+    background-color: rgba(0,0,0,0.12);
+    padding: 4px;
+}
+
+.fakeButton.calvin::after {
+    content: "dude";
+    background-color: rgba(39, 129, 33, 0.25);
+    padding: 4px;
+}
